@@ -6,44 +6,36 @@ namespace Space.Client
     public class CameraController : InjectableMonoBehavior
     {
         [Inject]
-        public EntityManager Entities { get; private set; }
-        [Inject]
-        public MapController Map { get; private set; }
+        public Camera MainCamera { get; private set; }
 
-        public Vector3 TargetOffset;
-        public float SpringStiffness;
-        public float Damping;
-        public float Mass;
-
-        private bool _firstFrame = true;
-        private Vector3 _velocity = Vector3.zero;
-
-        private void LateUpdate()
+        private void OnDrawGizmos()
         {
-            if (null == Entities.Player)
+            var sceneCamera = MainCamera ?? Camera.main;
+            if (null == sceneCamera)
             {
                 return;
             }
 
-            if (_firstFrame)
-            {
-                _firstFrame = false;
+            var width = Screen.width;
+            var height = Screen.height;
 
-                transform.position = Entities.Player.transform.position + TargetOffset;
-            }
-            else
-            {
-                var dt = Time.deltaTime;
-                var desiredPosition = Entities.Player.transform.position + TargetOffset;
-                var delta = transform.position - desiredPosition;
+            var topLeft = GroundPlaneIntersection(sceneCamera, new Vector2(0, 0));
+            var topRight = GroundPlaneIntersection(sceneCamera, new Vector2(width, 0));
+            var bottomRight = GroundPlaneIntersection(sceneCamera, new Vector2(width, height));
+            var bottomLeft = GroundPlaneIntersection(sceneCamera, new Vector2(0, height));
 
-                var force = -SpringStiffness * delta - Damping * _velocity;
-                var acceleration = force / Mass;
-                _velocity += dt * acceleration;
-                
-                transform.position += dt * _velocity;
-                transform.LookAt(Entities.Player.transform.position);
-            }
+            Gizmos.DrawLine(topLeft, topRight);
+            Gizmos.DrawLine(topRight, bottomRight);
+            Gizmos.DrawLine(bottomRight, bottomLeft);
+            Gizmos.DrawLine(bottomLeft, topLeft);
+        }
+
+        private static Vector3 GroundPlaneIntersection(Camera camera, Vector2 screenPosition)
+        {
+            var ray = camera.ScreenPointToRay(screenPosition);
+
+            var t = -ray.origin.y / ray.direction.y;
+            return ray.origin + t * ray.direction;
         }
     }
 }

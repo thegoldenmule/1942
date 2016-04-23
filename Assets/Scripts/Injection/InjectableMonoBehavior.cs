@@ -10,9 +10,8 @@ namespace Space.Client
         /// <summary>
         /// Called as part of monobehaviour lifecycle.
         /// </summary>
-        private void Awake()
+        protected virtual void Awake()
         {
-            Debug.Log("Inject " + GetType().Name);
             Director.Inject(this);
         }
     }
