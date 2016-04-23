@@ -10,7 +10,7 @@ namespace Space.Client
 
         private void OnDrawGizmos()
         {
-            var sceneCamera = MainCamera ?? Camera.main;
+            var sceneCamera = MainCamera ?? Camera.main ?? GetComponentInChildren<Camera>();
             if (null == sceneCamera)
             {
                 return;

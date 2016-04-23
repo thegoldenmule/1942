@@ -42,6 +42,9 @@ MonoBehaviour:
   PlayerBounds:
     m_Center: {x: 0, y: 0, z: -22}
     m_Extent: {x: 12, y: 0, z: 5}
+  MapBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 20, y: 0, z: 30}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

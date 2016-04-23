@@ -6,7 +6,8 @@ namespace Space.Client
     public enum StatType
     {
         Health,
-        Speed
+        Speed,
+        Damage
     }
 
     [Serializable]

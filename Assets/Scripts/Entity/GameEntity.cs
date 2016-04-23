@@ -10,6 +10,7 @@ namespace Space.Client
 
         public PhysicsModel Model = new PhysicsModel();
         public StatController Stats = new StatController();
+        public AIController Agent = new AIController();
 
         protected Transform _transform;
 
