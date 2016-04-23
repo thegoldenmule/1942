@@ -10,14 +10,14 @@ namespace Space.Client
         /// <summary>
         /// Visible bounds of the map.
         /// </summary>
-        public Bounds Bounds;
+        public Bounds PlayerBounds;
 
         /// <summary>
         /// Draws gizmos for the map.
         /// </summary>
         private void OnDrawGizmos()
         {
-            GizmosUtil.DrawBounds(Bounds);
+            GizmosUtil.DrawBounds(PlayerBounds);
         }
     }
 }

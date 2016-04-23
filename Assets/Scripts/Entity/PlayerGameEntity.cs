@@ -1,20 +1,22 @@
-﻿using UnityEngine;
+﻿using Ninject;
 
 namespace Space.Client
 {
     public class PlayerGameEntity : GameEntity
     {
-        public Bounds Bounds = new Bounds(Vector3.zero, Vector3.zero);
+        [Inject]
+        public MapController Map { get; private set; }
 
-        public float SpringStiffness = 100;
+        public float SpringStiffness = 1000;
         public float Damping = 10;
 
         protected override void Update()
         {
             var position = _transform.position;
-            if (!Bounds.Contains(position))
+            var bounds = Map.PlayerBounds;
+            if (!bounds.Contains(position))
             {
-                var closest = Bounds.ClosestPoint(position);
+                var closest = bounds.ClosestPoint(position);
                 var delta = position - closest;
 
                 // add spring force (Hooke's law + some velocity based damping)
@@ -22,13 +24,6 @@ namespace Space.Client
             }
 
             base.Update();
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.yellow;
-
-            GizmosUtil.DrawBounds(Bounds);
         }
     }
 }

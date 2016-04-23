@@ -15,7 +15,7 @@ namespace Space.Client
 
         public Rect Variance = new Rect(0, 0, 0, 0);
 
-        public bool SpawnOnAwake = false;
+        public bool SpawnOnStart = false;
         public float DelaySeconds;
         public bool DisableOnSpawn = true;
 
@@ -31,11 +31,9 @@ namespace Space.Client
             StartCoroutine(WaitForSpawn());
         }
 
-        protected override void Awake()
+        private void Start()
         {
-            base.Awake();
-
-            if (SpawnOnAwake)
+            if (SpawnOnStart)
             {
                 Spawn();
             }
@@ -50,7 +48,12 @@ namespace Space.Client
                 position.z + Random.Range(Variance.yMin, Variance.yMax));
 
             var instance = Pools.Get<GameEntity>(EntityPrefab.gameObject);
-            instance.transform.position = spawnPosition;
+            instance.transform.position = instance.Model.Position = spawnPosition;
+
+            if (DisableOnSpawn)
+            {
+                enabled = false;
+            }
         }
 
         private IEnumerator WaitForSpawn()
@@ -68,7 +71,11 @@ namespace Space.Client
         private void OnDrawGizmos()
         {
             var position = transform.position;
-            
+
+            Gizmos.color = Color.red;
+
+            Gizmos.DrawWireCube(position, Vector3.one);
+
             Gizmos.DrawLine(
                 position + new Vector3(Variance.xMin, 0, Variance.yMin),
                 position + new Vector3(Variance.xMax, 0, Variance.yMin));
