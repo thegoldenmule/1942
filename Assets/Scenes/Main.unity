@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2deed7b220d6a684da494abedbfbf468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityPrefab: {fileID: 11489672, guid: ea0adcd93669a124a8d75a707423601b, type: 2}
+  Entity: {fileID: 0}
   Variance:
     serializedVersion: 2
     x: -1
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2deed7b220d6a684da494abedbfbf468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityPrefab: {fileID: 11457070, guid: 8a88136388efed3408fd9c70d8ac74b5, type: 2}
+  Entity: {fileID: 11400000, guid: 1ebd3f376f856eb478cfdf27072b78e6, type: 2}
   Variance:
     serializedVersion: 2
     x: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2deed7b220d6a684da494abedbfbf468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityPrefab: {fileID: 11489672, guid: ea0adcd93669a124a8d75a707423601b, type: 2}
+  Entity: {fileID: 0}
   Variance:
     serializedVersion: 2
     x: -3
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2deed7b220d6a684da494abedbfbf468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityPrefab: {fileID: 11489672, guid: ea0adcd93669a124a8d75a707423601b, type: 2}
+  Entity: {fileID: 0}
   Variance:
     serializedVersion: 2
     x: 0

@@ -4,10 +4,13 @@ using UnityEngine;
 namespace Space.Client
 {
     [Serializable]
-    public class FlightLeg
+    public class TranslationEvent
     {
+        public float Time;
+
         public AnimationCurve X;
         public AnimationCurve Z;
+        public float Scale = 1f;
 
         private float _duration = -1;
 
@@ -19,9 +22,9 @@ namespace Space.Client
             }
 
             position = new Vector3(
-                X.Evaluate(time),
+                X.Evaluate(time) * Scale,
                 0f,
-                Z.Evaluate(time));
+                Z.Evaluate(time) * Scale);
 
             return time < _duration;
         }

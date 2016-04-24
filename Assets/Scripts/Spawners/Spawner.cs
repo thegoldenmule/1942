@@ -8,9 +8,9 @@ namespace Space.Client
     public class Spawner : InjectableMonoBehavior
     {
         [Inject]
-        public PoolManager Pools { get; private set; }
+        public EntityFactory Entities { get; private set; }
 
-        public GameEntity EntityPrefab;
+        public EntityDefinition Entity;
 
         public Rect Variance = new Rect(0, 0, 0, 0);
 
@@ -40,14 +40,17 @@ namespace Space.Client
 
         protected virtual void SpawnInternal()
         {
-            var position = transform.position;
-            var spawnPosition = new Vector3(
-                position.x + Random.Range(Variance.xMin, Variance.xMax),
-                position.y,
-                position.z + Random.Range(Variance.yMin, Variance.yMax));
+            if (null != Entity)
+            {
+                var position = transform.position;
+                var spawnPosition = new Vector3(
+                    position.x + Random.Range(Variance.xMin, Variance.xMax),
+                    position.y,
+                    position.z + Random.Range(Variance.yMin, Variance.yMax));
 
-            var instance = Pools.Get<GameEntity>(EntityPrefab.gameObject);
-            instance.transform.position = instance.Model.Position = spawnPosition;
+                var instance = Entities.Entity(Entity);
+                instance.transform.position = instance.Model.Position = spawnPosition;
+            }
 
             if (DisableOnSpawn)
             {

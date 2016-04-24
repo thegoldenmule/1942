@@ -8,11 +8,33 @@ namespace Space.Client
         [Inject]
         public EntityManager Entities { get; private set; }
 
+        public EntityDefinition Definition { get; private set; }
+
         public PhysicsController Model;
         public StatController Stats;
         public AIController Agent;
         
         protected Transform _transform;
+
+        public void Initialize(EntityDefinition definition)
+        {
+            Definition = definition;
+
+            if (null != Agent)
+            {
+                Agent.Initialize(this);
+            }
+
+            if (null != Model)
+            {
+                Model.Initialize(this);
+            }
+
+            if (null != Stats)
+            {
+                Stats.Initialize(this);
+            }
+        }
 
         protected override void Awake()
         {
@@ -34,7 +56,7 @@ namespace Space.Client
         protected virtual void Update()
         {
             var dt = Time.deltaTime;
-            var iterations = Mathf.Max(1, Model.Iterations);
+            var iterations = Mathf.Max(1, Definition.Physics.Iterations);
             var step = dt/iterations;
             while (iterations-- > 0)
             {

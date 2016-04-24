@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
-namespace Space.Client
+﻿namespace Space.Client
 {
     public enum StatType
     {
@@ -10,18 +7,24 @@ namespace Space.Client
         Damage
     }
 
-    [CreateAssetMenu(fileName = "New_Stats", menuName = "StatsController")]
-    public class StatController : ScriptableObject
+    public class StatController
     {
-        public List<Stat> Stats = new List<Stat>();
+        private GameEntity _entity;
+        private StatControllerDefinition _definition;
+
+        public void Initialize(GameEntity entity)
+        {
+            _entity = entity;
+            _definition = _entity.Definition.Stats;
+        }
 
         public Stat Stat(StatType type)
         {
-            for (int i = 0, len = Stats.Count; i < len; i++)
+            for (int i = 0, len = _definition.Stats.Count; i < len; i++)
             {
-                if (Stats[i].Type == type)
+                if (_definition.Stats[i].Type == type)
                 {
-                    return Stats[i];
+                    return _definition.Stats[i];
                 }
             }
 
@@ -29,7 +32,7 @@ namespace Space.Client
             {
                 Type = type
             };
-            Stats.Add(stat);
+            _definition.Stats.Add(stat);
 
             return stat;
         }

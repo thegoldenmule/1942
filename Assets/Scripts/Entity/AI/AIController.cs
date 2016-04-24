@@ -1,19 +1,18 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Space.Client
 {
     [Serializable]
-    public class AIController : ScriptableObject
+    public class AIController
     {
         protected readonly StateMachine _fsm = new StateMachine();
 
-        public virtual void Initialize()
+        public virtual void Initialize(GameEntity entity)
         {
             
         }
 
-        public virtual void Update()
+        public virtual void DeltaUpdate(float dt)
         {
             
         }

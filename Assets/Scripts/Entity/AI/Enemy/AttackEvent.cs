@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Space.Client
 {
@@ -6,6 +6,6 @@ namespace Space.Client
     public class AttackEvent
     {
         public float Time;
-        public string Tag;
+        
     }
 }

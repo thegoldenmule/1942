@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97bb9770eb3a31441891e6a56342dfd3, type: 3}
-  m_Name: Wolf_Physics
+  m_Script: {fileID: 11500000, guid: 2b06545109e0fbf40a7d624cfa6f81db, type: 3}
+  m_Name: Player_AI
   m_EditorClassIdentifier: 
-  Iterations: 4
-  Mass: 1
-  Drag: 100
+  Type: 0
+  Attacks: []
+  Translations: []

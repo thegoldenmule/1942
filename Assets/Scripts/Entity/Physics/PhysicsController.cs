@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace Space.Client
 {
-    [CreateAssetMenu(fileName = "New_Physcs", menuName = "PhysicsController")]
-    public class PhysicsController : ScriptableObject
+    public class PhysicsController
     {
         [NonSerialized]
         public Vector3 Position = Vector3.zero;
@@ -21,10 +20,8 @@ namespace Space.Client
         [NonSerialized]
         public Vector3 Impulses = Vector3.zero;
 
-        public int Iterations = 4;
-        public float Mass = 1;
-        public float Drag = 100;
-
+        private GameEntity _entity;
+        private PhysicsControllerDefinition _definition;
         private Vector3 _velocity = Vector3.zero;
         private Vector3 _acceleration = Vector3.zero;
 
@@ -38,13 +35,19 @@ namespace Space.Client
             get { return _acceleration; }
         }
 
+        public void Initialize(GameEntity entity)
+        {
+            _entity = entity;
+            _definition = entity.Definition.Physics;
+        }
+
         public void Step(float dt)
         {
             // add drag
-            Forces -= Drag * _velocity;
+            Forces -= _definition.Drag * _velocity;
 
-            _acceleration = Forces / Mass;
-            _velocity += dt * _acceleration + Impulses / Mass;
+            _acceleration = Forces / _definition.Mass;
+            _velocity += dt * _acceleration + Impulses / _definition.Mass;
 
             Position += dt * _velocity;
             Forces = Vector3.zero;

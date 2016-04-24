@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0407ad9f1ec782a4a811689d7c859baf, type: 3}
+  m_Name: Wolf
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 11489672, guid: ea0adcd93669a124a8d75a707423601b, type: 2}
+  AI: {fileID: 11400000, guid: e478e937017dbf544b5a58221fe26f3c, type: 2}
+  Stats: {fileID: 11400000, guid: e20b8edad3eb29444b57294aee83fc55, type: 2}
+  Physics: {fileID: 11400000, guid: c40a239a67a903f42a2d34ed87c07070, type: 2}
