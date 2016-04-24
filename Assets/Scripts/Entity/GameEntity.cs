@@ -13,6 +13,7 @@ namespace Space.Client
         public PhysicsController Model;
         public StatController Stats;
         public AIController Agent;
+        public MovementController Movement;
         
         protected Transform _transform;
 
@@ -33,6 +34,11 @@ namespace Space.Client
             if (null != Stats)
             {
                 Stats.Initialize(this);
+            }
+
+            if (null != Movement)
+            {
+                Movement.Initialize(this);
             }
         }
 

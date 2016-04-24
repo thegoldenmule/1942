@@ -10,5 +10,6 @@ namespace Space.Client
         public AIControllerDefinition AI;
         public StatControllerDefinition Stats;
         public PhysicsControllerDefinition Physics;
+        public MovementControllerDefinition Movement;
     }
 }
