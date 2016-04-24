@@ -75,6 +75,8 @@ namespace Space.Client
 
             Gizmos.DrawWireCube(position, Vector3.one);
 
+            Gizmos.color = Color.yellow;
+
             Gizmos.DrawLine(
                 position + new Vector3(Variance.xMin, 0, Variance.yMin),
                 position + new Vector3(Variance.xMax, 0, Variance.yMin));

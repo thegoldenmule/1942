@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Space.Client
 {
-    [Serializable]
-    public class PhysicsModel
+    [CreateAssetMenu(fileName = "New_Physcs", menuName = "PhysicsController")]
+    public class PhysicsController : ScriptableObject
     {
         [NonSerialized]
         public Vector3 Position = Vector3.zero;

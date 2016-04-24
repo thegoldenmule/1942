@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526d1be1bc1e8df4198e71d9e3bdc6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalForce: 20
+  HorizontalForce: 40
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

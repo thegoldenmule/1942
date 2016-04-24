@@ -8,10 +8,10 @@ namespace Space.Client
         [Inject]
         public EntityManager Entities { get; private set; }
 
-        public PhysicsModel Model = new PhysicsModel();
-        public StatController Stats = new StatController();
-        public AIController Agent = new AIController();
-
+        public PhysicsController Model;
+        public StatController Stats;
+        public AIController Agent;
+        
         protected Transform _transform;
 
         protected override void Awake()

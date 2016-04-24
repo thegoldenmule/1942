@@ -127,10 +127,10 @@ MonoBehaviour:
   EntityPrefab: {fileID: 11489672, guid: ea0adcd93669a124a8d75a707423601b, type: 2}
   Variance:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+    x: -1
+    y: -1
+    width: 2
+    height: 2
   SpawnOnStart: 1
   DelaySeconds: 0
   DisableOnSpawn: 1
@@ -638,10 +638,10 @@ MonoBehaviour:
   EntityPrefab: {fileID: 11489672, guid: ea0adcd93669a124a8d75a707423601b, type: 2}
   Variance:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+    x: -3
+    y: -3
+    width: 6
+    height: 6
   SpawnOnStart: 1
   DelaySeconds: 0
   DisableOnSpawn: 1

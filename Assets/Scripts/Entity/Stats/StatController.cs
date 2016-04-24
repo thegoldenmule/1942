@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Space.Client
 {
@@ -10,16 +10,8 @@ namespace Space.Client
         Damage
     }
 
-    [Serializable]
-    public class Stat
-    {
-        public StatType Type;
-
-        public float Value;
-    }
-
-    [Serializable]
-    public class StatController
+    [CreateAssetMenu(fileName = "New_Stats", menuName = "StatsController")]
+    public class StatController : ScriptableObject
     {
         public List<Stat> Stats = new List<Stat>();
 

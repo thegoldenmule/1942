@@ -11,7 +11,7 @@ GameObject:
   - 95: {fileID: 9505838}
   - 114: {fileID: 11489672}
   m_Layer: 0
-  m_Name: Wolf Defender
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,25 +120,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39e01cbaeaf4d849afd77a047a55802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Model:
-    Iterations: 4
-    Mass: 1
-    Drag: 100
-  Stats:
-    Stats:
-    - Type: 0
-      Value: 10
-    - Type: 1
-      Value: 1
-    - Type: 2
-      Value: 1
+  Model: {fileID: 11400000, guid: 74abae88434b8364d9c2b6712859cc4e, type: 2}
+  Stats: {fileID: 11400000, guid: a694aa47e981116458a3be2bb50308d2, type: 2}
+  Agent: {fileID: 11400000, guid: 864a9698fe7e1e1409e5ba953d8cbcea, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Agent
+      value: 
+      objectReference: {fileID: 11400000, guid: 864a9698fe7e1e1409e5ba953d8cbcea,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: Model
+      value: 
+      objectReference: {fileID: 11400000, guid: 74abae88434b8364d9c2b6712859cc4e,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 11400000, guid: a694aa47e981116458a3be2bb50308d2,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111630}
