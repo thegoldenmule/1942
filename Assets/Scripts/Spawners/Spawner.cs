@@ -50,6 +50,7 @@ namespace Space.Client
 
                 var instance = Entities.Entity(Entity);
                 instance.transform.position = instance.transform.position = spawnPosition;
+                instance.transform.rotation = transform.rotation;
             }
 
             if (DisableOnSpawn)
