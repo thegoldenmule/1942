@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2deed7b220d6a684da494abedbfbf468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Entity: {fileID: 0}
+  Entity: {fileID: 11400000, guid: f63d93d57df52af48be7163744f75724, type: 2}
   Variance:
     serializedVersion: 2
     x: -1
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2deed7b220d6a684da494abedbfbf468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Entity: {fileID: 0}
+  Entity: {fileID: 11400000, guid: f63d93d57df52af48be7163744f75724, type: 2}
   Variance:
     serializedVersion: 2
     x: -3

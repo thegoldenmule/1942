@@ -1,4 +1,6 @@
-﻿namespace Space.Client
+﻿using UnityEngine;
+
+namespace Space.Client
 {
     public class EnemyAIController : AIController
     {
@@ -15,7 +17,7 @@
         {
             base.DeltaUpdate(dt);
 
-            
+            _entity.transform.position += Vector3.back * _entity.Stats.Stat(StatType.Speed).Value * dt;
         }
     }
 }

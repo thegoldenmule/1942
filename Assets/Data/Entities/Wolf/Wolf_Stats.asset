@@ -11,4 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a82b57b93aa45743931eddbbb282757, type: 3}
   m_Name: Wolf_Stats
   m_EditorClassIdentifier: 
-  Stats: []
+  Stats:
+  - Type: 0
+    Value: 100
+  - Type: 1
+    Value: 2
+  - Type: 2
+    Value: 1

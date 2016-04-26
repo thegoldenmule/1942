@@ -15,19 +15,19 @@ namespace Space.Client
         public MovementController Movement;
         
         protected Transform _transform;
-
+        
         public virtual void Initialize(EntityDefinition definition)
         {
             Definition = definition;
 
-            if (null != Agent)
-            {
-                Agent.Initialize(this);
-            }
-
             if (null != Stats)
             {
                 Stats.Initialize(this);
+            }
+
+            if (null != Agent)
+            {
+                Agent.Initialize(this);
             }
 
             if (null != Movement)
