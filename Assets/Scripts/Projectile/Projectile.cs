@@ -58,8 +58,7 @@ namespace Space.Client
                 if (bounds.IntersectRay(ray, out intersectionDistance)
                     && intersectionDistance < distance)
                 {
-                    Debug.Log("Collision!");
-
+                    // collision
                     entity.Stats.Stat(StatType.Health).Value -= _source.Stats.Stat(StatType.DamageModifier).Value * _weapon.Damage;
 
                     return false;

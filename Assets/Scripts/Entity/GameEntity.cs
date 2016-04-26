@@ -7,6 +7,8 @@ namespace Space.Client
     {
         [Inject]
         public EntityManager Entities { get; private set; }
+        [Inject]
+        public PoolManager Pools { get; private set; }
 
         public EntityDefinition Definition { get; private set; }
 
@@ -34,6 +36,8 @@ namespace Space.Client
             {
                 Weapons.Initialize(this);
             }
+
+            Stats.Stat(StatType.Health).OnUpdated += Stat_OnHealthUpdated;
         }
 
         protected override void Awake()
@@ -43,12 +47,12 @@ namespace Space.Client
             _transform = transform;
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             Entities.Add(this);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             Entities.Remove(this);
         }
@@ -59,6 +63,19 @@ namespace Space.Client
 
             Stats.DeltaUpdate(dt);
             Agent.DeltaUpdate(dt);
+        }
+
+        protected virtual void Die()
+        {
+            Pools.Put(gameObject);
+        }
+
+        private void Stat_OnHealthUpdated(Stat stat, float oldValue, float newValue)
+        {
+            if (newValue <= 0f)
+            {
+                Die();
+            }
         }
 
         private void OnDrawGizmos()
