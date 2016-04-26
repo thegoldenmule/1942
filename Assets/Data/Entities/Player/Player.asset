@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0407ad9f1ec782a4a811689d7c859baf, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  Bounds:
+    m_Center: {x: 0, y: 0, z: -1}
+    m_Extent: {x: 2, y: 2, z: 2}
   Prefab: {fileID: 11457070, guid: 8a88136388efed3408fd9c70d8ac74b5, type: 2}
   AI: {fileID: 11400000, guid: f2a7d96a03fbe714b9fbfc51dc67ff65, type: 2}
   Stats: {fileID: 11400000, guid: ef2b9d90430449043b73b4d815e58bbb, type: 2}
   Physics: {fileID: 11400000, guid: 9a4a75f58e35df849a4403378283c9a0, type: 2}
+  Weapons: {fileID: 11400000, guid: 8676b249a1517d849a7c4150f9036977, type: 2}

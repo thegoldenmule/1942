@@ -7,18 +7,18 @@ namespace Space.Client
         private readonly PoolManager _pools;
         private readonly AIControllerFactory _ai;
         private readonly StatControllerFactory _stats;
-        private readonly MovementControllerFactory _movements;
-
+        private readonly ProjectileManager _projectiles;
+        
         public EntityFactory(
             PoolManager pools,
             AIControllerFactory ai,
             StatControllerFactory stats,
-            MovementControllerFactory movements)
+            ProjectileManager projectiles)
         {
             _pools = pools;
             _ai = ai;
             _stats = stats;
-            _movements = movements;
+            _projectiles = projectiles;
         }
 
         public GameEntity Entity(EntityDefinition definition)
@@ -32,7 +32,7 @@ namespace Space.Client
 
             instance.Agent = _ai.AI(definition.AI);
             instance.Stats = _stats.Stats(definition.Stats);
-            instance.Movement = _movements.Movement(definition.Movement);
+            instance.Weapons = new WeaponController(_projectiles);
             instance.Initialize(definition);
 
             return instance;

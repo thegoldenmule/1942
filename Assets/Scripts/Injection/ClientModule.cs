@@ -13,6 +13,7 @@ namespace Space.Client
             Bind<CameraController>().ToProvider(new HierarchyResolver<CameraController>(Tags.MainCamera)).InSingletonScope();
             Bind<MapController>().ToProvider(new HierarchyResolver<MapController>(Tags.Controllers)).InSingletonScope();
             Bind<Camera>().ToConstant(Camera.main).InSingletonScope();
+            Bind<ProjectileManager>().To<ProjectileManager>().InSingletonScope();
 
             Bind<EntityManager>().To<EntityManager>().InSingletonScope();
         }

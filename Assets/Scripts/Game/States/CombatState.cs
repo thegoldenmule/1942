@@ -8,6 +8,8 @@ namespace Space.Client
         public GameStateController States { get; private set; }
         [Inject]
         public InputController Input { get; private set; }
+        [Inject]
+        public ProjectileManager Projectiles { get; private set; }
 
         public override void Enter()
         {
@@ -21,11 +23,7 @@ namespace Space.Client
             base.DeltaUpdate(dt);
 
             Input.DeltaUpdate(dt);
-        }
-
-        public override IAsyncToken<IState> Exit()
-        {
-            return base.Exit();
+            Projectiles.DeltaUpdate(dt);
         }
     }
 }

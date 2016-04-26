@@ -12,7 +12,7 @@ namespace Space.Client
 
         public StatController Stats;
         public AIController Agent;
-        public MovementController Movement;
+        public WeaponController Weapons;
         
         protected Transform _transform;
         
@@ -30,9 +30,9 @@ namespace Space.Client
                 Agent.Initialize(this);
             }
 
-            if (null != Movement)
+            if (null != Weapons)
             {
-                Movement.Initialize(this);
+                Weapons.Initialize(this);
             }
         }
 
@@ -59,6 +59,19 @@ namespace Space.Client
 
             Stats.DeltaUpdate(dt);
             Agent.DeltaUpdate(dt);
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (null == Definition)
+            {
+                return;
+            }
+
+            Gizmos.color = Color.green;
+            GizmosUtil.DrawBounds(new Bounds(
+                transform.position + Definition.Bounds.center,
+                Definition.Bounds.size));
         }
     }
 }

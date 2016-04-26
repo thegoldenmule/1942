@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b996581b1c229554691c75eac8e3481d, type: 3}
+  m_Name: Wolf_WeaponController
+  m_EditorClassIdentifier: 
+  Weapons:
+  - {fileID: 11400000, guid: ed8014271fb085c44a4e340afa674654, type: 2}

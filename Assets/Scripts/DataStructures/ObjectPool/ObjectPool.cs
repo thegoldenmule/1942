@@ -35,8 +35,13 @@ namespace Space.Client
                 Allocate(_numToGrow);
             }
 
-            var instance = _availableInstances[len - 1];
-            _availableInstances.RemoveAt(len - 1);
+            if (0 == _availableInstances.Count)
+            {
+                return default(T);
+            }
+
+            var instance = _availableInstances[0];
+            _availableInstances.RemoveAt(0);
             _usedInstances.Add(instance);
 
             return instance;

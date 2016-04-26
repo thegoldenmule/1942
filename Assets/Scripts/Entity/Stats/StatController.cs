@@ -6,7 +6,7 @@ namespace Space.Client
     {
         Health,
         Speed,
-        Damage
+        DamageModifier
     }
 
     public class StatController

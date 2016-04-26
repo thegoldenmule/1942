@@ -26,6 +26,11 @@ namespace Space.Client
 
             var horizontal = Input.GetAxis(AXIS_NAME);
             player.Physics.Impulses += horizontal * HorizontalForce * Vector3.right;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                player.Weapons.Fire();
+            }
         }
     }
 }
