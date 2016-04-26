@@ -12,7 +12,7 @@ namespace Space.Client
         }
 
         public AIType Type;
-        public AttackEvent[] Attacks;
-        public TranslationEvent[] Translations;
+
+        public float AttackSpeedSeconds = 3f;
     }
 }

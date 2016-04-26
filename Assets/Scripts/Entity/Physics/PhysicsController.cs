@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace Space.Client
@@ -7,23 +7,23 @@ namespace Space.Client
     {
         [NonSerialized]
         public Vector3 Position = Vector3.zero;
-        
+
         [NonSerialized]
         public Quaternion Rotation = Quaternion.identity;
-        
+
         [NonSerialized]
         public Vector3 Scale = Vector3.one;
 
         [NonSerialized]
         public Vector3 Forces = Vector3.zero;
-        
+
         [NonSerialized]
         public Vector3 Impulses = Vector3.zero;
 
-        private GameEntity _entity;
-        private PhysicsControllerDefinition _definition;
-        private Vector3 _velocity = Vector3.zero;
-        private Vector3 _acceleration = Vector3.zero;
+        protected GameEntity _entity;
+        protected PhysicsControllerDefinition _definition;
+        protected Vector3 _velocity = Vector3.zero;
+        protected Vector3 _acceleration = Vector3.zero;
 
         public Vector3 Velocity
         {
@@ -35,7 +35,12 @@ namespace Space.Client
             get { return _acceleration; }
         }
 
-        public void Initialize(GameEntity entity)
+        public PhysicsControllerDefinition Definition
+        {
+            get { return _definition; }
+        }
+
+        public virtual void Initialize(GameEntity entity)
         {
             _entity = entity;
             _definition = entity.Definition.Physics;

@@ -10,25 +10,19 @@ namespace Space.Client
 
         public EntityDefinition Definition { get; private set; }
 
-        public PhysicsController Model;
         public StatController Stats;
         public AIController Agent;
         public MovementController Movement;
         
         protected Transform _transform;
 
-        public void Initialize(EntityDefinition definition)
+        public virtual void Initialize(EntityDefinition definition)
         {
             Definition = definition;
 
             if (null != Agent)
             {
                 Agent.Initialize(this);
-            }
-
-            if (null != Model)
-            {
-                Model.Initialize(this);
             }
 
             if (null != Stats)
@@ -62,16 +56,9 @@ namespace Space.Client
         protected virtual void Update()
         {
             var dt = Time.deltaTime;
-            var iterations = Mathf.Max(1, Definition.Physics.Iterations);
-            var step = dt/iterations;
-            while (iterations-- > 0)
-            {
-                Model.Step(step);
-            }
 
-            _transform.position = Model.Position;
-            _transform.localRotation = Model.Rotation;
-            _transform.localScale = Model.Scale;
+            Stats.DeltaUpdate(dt);
+            Agent.DeltaUpdate(dt);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Assets.Scripts.Entity
                 }
                 case AIControllerDefinition.AIType.Null:
                 {
-                    return null;
+                    return new NullAIController();
                 }
             }
 

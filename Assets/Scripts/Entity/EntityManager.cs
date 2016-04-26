@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Space.Client
 {
@@ -7,7 +8,7 @@ namespace Space.Client
         private readonly List<GameEntity> _entities = new List<GameEntity>();
         private readonly List<GameEntity> _enemies = new List<GameEntity>();
 
-        public GameEntity Player { get; private set; }
+        public PlayerGameEntity Player { get; private set; }
 
         public IList<GameEntity> Entities
         {
@@ -31,7 +32,15 @@ namespace Space.Client
 
             if (entity.tag == Tags.Player)
             {
-                Player = entity;
+                var player = entity as PlayerGameEntity;
+                if (null != player)
+                {
+                    Player = player;
+                }
+                else
+                {
+                    Debug.LogWarning(string.Format("Non-PlayerGameEntity tagged as Player : {0}.", entity.name));
+                }
             }
             else
             {

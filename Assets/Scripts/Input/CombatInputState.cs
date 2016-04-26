@@ -25,7 +25,7 @@ namespace Space.Client
             }
 
             var horizontal = Input.GetAxis(AXIS_NAME);
-            player.Model.Impulses += horizontal * HorizontalForce * Vector3.right;
+            player.Physics.Impulses += horizontal * HorizontalForce * Vector3.right;
         }
     }
 }

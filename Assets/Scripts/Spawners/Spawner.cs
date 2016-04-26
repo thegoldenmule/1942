@@ -49,7 +49,7 @@ namespace Space.Client
                     position.z + Random.Range(Variance.yMin, Variance.yMax));
 
                 var instance = Entities.Entity(Entity);
-                instance.transform.position = instance.Model.Position = spawnPosition;
+                instance.transform.position = instance.transform.position = spawnPosition;
             }
 
             if (DisableOnSpawn)

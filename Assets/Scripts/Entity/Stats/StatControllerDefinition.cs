@@ -6,6 +6,6 @@ namespace Space.Client
     [CreateAssetMenu(fileName = "New_Stats", menuName = "Stats")]
     public class StatControllerDefinition : ScriptableObject
     {
-        public List<Stat> Stats = new List<Stat>();
+        public List<StatDefinition> Stats = new List<StatDefinition>();
     }
 }

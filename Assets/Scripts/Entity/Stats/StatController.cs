@@ -1,4 +1,6 @@
-﻿namespace Space.Client
+﻿using System.Collections.Generic;
+
+namespace Space.Client
 {
     public enum StatType
     {
@@ -9,6 +11,8 @@
 
     public class StatController
     {
+        private readonly List<Stat> _stats = new List<Stat>(); 
+
         private GameEntity _entity;
         private StatControllerDefinition _definition;
 
@@ -16,25 +20,29 @@
         {
             _entity = entity;
             _definition = _entity.Definition.Stats;
+
+            foreach (var definition in _definition.Stats)
+            {
+                _stats.Add(new Stat(definition));
+            }
+        }
+
+        public void DeltaUpdate(float dt)
+        {
+            //
         }
 
         public Stat Stat(StatType type)
         {
-            for (int i = 0, len = _definition.Stats.Count; i < len; i++)
+            for (int i = 0, len = _stats.Count; i < len; i++)
             {
-                if (_definition.Stats[i].Type == type)
+                if (_stats[i].Definition.Type == type)
                 {
-                    return _definition.Stats[i];
+                    return _stats[i];
                 }
             }
 
-            var stat = new Stat
-            {
-                Type = type
-            };
-            _definition.Stats.Add(stat);
-
-            return stat;
+            return null;
         }
     }
 }

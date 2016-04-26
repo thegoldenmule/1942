@@ -1,12 +1,26 @@
-﻿using System;
-
-namespace Space.Client
+﻿namespace Space.Client
 {
-    [Serializable]
     public class Stat
     {
-        public StatType Type;
+        private readonly StatDefinition _definition;
 
-        public float Value;
+        public StatDefinition Definition
+        {
+            get { return _definition; }
+        }
+
+        public float Initial
+        {
+            get { return _definition.Value; }
+        }
+
+        public float Value { get; set; }
+
+        public Stat(StatDefinition definition)
+        {
+            _definition = definition;
+
+            Value = _definition.Value;
+        }
     }
 }
