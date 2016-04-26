@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0407ad9f1ec782a4a811689d7c859baf, type: 3}
+  m_Name: Defender
+  m_EditorClassIdentifier: 
+  Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 3, y: 2, z: 2}
+  Prefab: {fileID: 11473892, guid: 03728033fa151b74cab76122a16ab5eb, type: 2}
+  AI: {fileID: 11400000, guid: b846b27b056589445ada7360a609e9f2, type: 2}
+  Stats: {fileID: 11400000, guid: fd03218a34847fe4d98f36cc5748df1e, type: 2}
+  Physics: {fileID: 0}
+  Weapons: {fileID: 11400000, guid: ed6eedaff2ab0924ea901d804512e315, type: 2}
