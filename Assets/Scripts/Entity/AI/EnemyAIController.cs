@@ -27,8 +27,6 @@ namespace Space.Client
             var now = DateTime.Now;
             if (now.Subtract(_lastFireTime).TotalSeconds > _definition.AttackSpeedSeconds)
             {
-                Debug.Log("Fire");
-
                 _lastFireTime = DateTime.Now;
                 _entity.Weapons.Fire();
             }
