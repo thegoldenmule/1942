@@ -1,17 +1,22 @@
-﻿namespace Space.Client
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+namespace Space.Client
 {
-    public class SpawnerGroup : Spawner
+    public class SpawnerGroup : MonoBehaviour
     {
         public Spawner[] Spawners;
 
-        protected override void SpawnInternal()
+        public GameEntity[] Spawn()
         {
-            base.SpawnInternal();
+            var entities = new List<GameEntity>();
 
-            for (int i = 0, len = Spawners.Length; i < len; i++)
+            foreach (var spawner in Spawners)
             {
-                Spawners[i].Spawn();
+                entities.AddRange(spawner.Spawn());
             }
+
+            return entities.ToArray();
         }
     }
 }

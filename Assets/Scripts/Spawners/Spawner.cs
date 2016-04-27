@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using Ninject;
+﻿using Ninject;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,20 +14,6 @@ namespace Space.Client
         public Rect Variance = new Rect(0, 0, 0, 0);
 
         public bool SpawnOnStart = false;
-        public float DelaySeconds;
-        public bool DisableOnSpawn = true;
-
-        public void Spawn()
-        {
-            if (Mathf.Approximately(DelaySeconds, 0f))
-            {
-                SpawnInternal();
-
-                return;
-            }
-
-            StartCoroutine(WaitForSpawn());
-        }
 
         private void Start()
         {
@@ -38,8 +23,10 @@ namespace Space.Client
             }
         }
 
-        protected virtual void SpawnInternal()
+        public virtual GameEntity[] Spawn()
         {
+            GameEntity instance = null;
+
             if (null != Entity)
             {
                 var position = transform.position;
@@ -48,27 +35,15 @@ namespace Space.Client
                     position.y,
                     position.z + Random.Range(Variance.yMin, Variance.yMax));
 
-                var instance = Entities.Entity(Entity);
+                instance = Entities.Entity(Entity);
                 instance.transform.position = instance.transform.position = spawnPosition;
                 instance.transform.rotation = transform.rotation;
             }
 
-            if (DisableOnSpawn)
+            return new []
             {
-                enabled = false;
-            }
-        }
-
-        private IEnumerator WaitForSpawn()
-        {
-            yield return new WaitForSeconds(DelaySeconds);
-
-            SpawnInternal();
-        }
-
-        private void OnDisable()
-        {
-            StopAllCoroutines();
+                instance
+            };
         }
 
         private void OnDrawGizmos()

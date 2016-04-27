@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Defender_AI
   m_EditorClassIdentifier: 
   Type: 1
-  AttackSpeedSeconds: 3
+  AttackSpeedSeconds: 2

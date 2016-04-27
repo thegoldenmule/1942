@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using System;
+using Ninject;
 using UnityEngine;
 
 namespace Space.Client
@@ -15,6 +16,8 @@ namespace Space.Client
         public StatController Stats;
         public AIController Agent;
         public WeaponController Weapons;
+
+        public event Action<GameEntity> OnDeath; 
         
         protected Transform _transform;
         
@@ -68,6 +71,11 @@ namespace Space.Client
         protected virtual void Die()
         {
             Pools.Put(gameObject);
+
+            if (null != OnDeath)
+            {
+                OnDeath(this);
+            }
         }
 
         private void Stat_OnHealthUpdated(Stat stat, float oldValue, float newValue)
