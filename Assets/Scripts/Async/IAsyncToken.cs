@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace Space
 {
+    /// <summary>
+    /// Interface for asyncronous calls.
+    /// 
+    /// This is like a simplified promise.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IAsyncToken<T>
     {
         bool IsReady { get; }
@@ -10,12 +16,36 @@ namespace Space
         T Value { get; }
         Exception Exception { get; }
 
+        /// <summary>
+        /// Subscribed a callback for when the action is successful.
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <returns></returns>
         IAsyncToken<T> OnSuccess(Action<T> callback);
+
+        /// <summary>
+        /// Subscribes a callback for when the action has failed.
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <returns></returns>
         IAsyncToken<T> OnFailure(Action<Exception> callback);
+
+        /// <summary>
+        /// Subscribes a callback that is called regardless of success/fail.
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <returns></returns>
         IAsyncToken<T> OnFinally(Action<IAsyncToken<T>> callback);
 
+        /// <summary>
+        /// Aborts all callbacks, none will be called.
+        /// </summary>
         void Abort();
 
+        /// <summary>
+        /// Creates a token chained to this token.
+        /// </summary>
+        /// <returns></returns>
         IAsyncToken<T> Token();
     }
 

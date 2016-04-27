@@ -4,23 +4,45 @@ using UnityEngine;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Base class for all entities in the game.
+    /// </summary>
     public class GameEntity : InjectableMonoBehavior
     {
+        /// <summary>
+        /// Dependencies.
+        /// </summary>
         [Inject]
         public EntityManager Entities { get; private set; }
         [Inject]
         public PoolManager Pools { get; private set; }
 
+        /// <summary>
+        /// Definition of the entity.
+        /// </summary>
         public EntityDefinition Definition { get; private set; }
 
+        /// <summary>
+        /// Subsystems.
+        /// </summary>
         public StatController Stats;
         public AIController Agent;
         public WeaponController Weapons;
 
+        /// <summary>
+        /// Called when entity dies.
+        /// </summary>
         public event Action<GameEntity> OnDeath; 
         
+        /// <summary>
+        /// Cached transform.
+        /// </summary>
         protected Transform _transform;
         
+        /// <summary>
+        /// Preps the entity for play.
+        /// </summary>
+        /// <param name="definition"></param>
         public virtual void Initialize(EntityDefinition definition)
         {
             Definition = definition;

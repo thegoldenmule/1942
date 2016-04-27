@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Very basic pool.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ObjectPool<T>
     {
         private readonly HashSet<T> _usedInstances = new HashSet<T>();

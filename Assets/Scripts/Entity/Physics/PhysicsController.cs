@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Provides a very simple physics model.
+    /// </summary>
     public class PhysicsController
     {
         [NonSerialized]
