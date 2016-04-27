@@ -3,7 +3,7 @@
 namespace Space.Client
 {
     /// <summary>
-    /// Bootstraps the Director.
+    /// Bootstraps the Director, which separates if from Unity.
     /// </summary>
     public class Bootstrap : MonoBehaviour
     {
@@ -17,8 +17,6 @@ namespace Space.Client
         /// </summary>
         private void Awake()
         {
-            Debug.Log("Awake().");
-
             _director = new Director();
         }
 

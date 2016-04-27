@@ -1,25 +1,50 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using Ninject;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Manages spawners.
+    /// </summary>
     public class SpawnerManager : InjectableMonoBehavior
     {
+        /// <summary>
+        /// Dependencies.
+        /// </summary>
         [Inject]
         public GameStateController States { get; private set; }
 
+        /// <summary>
+        /// Waves.
+        /// </summary>
         public SpawnerGroup[] Waves;
 
+        /// <summary>
+        /// List of entities we're watching.
+        /// </summary>
         private readonly List<GameEntity> _watched = new List<GameEntity>();
+
+        /// <summary>
+        /// Index to wave we spawn.
+        /// </summary>
         private int _index = 0;
+
+        /// <summary>
+        /// True iff initialized.
+        /// </summary>
         private bool _started;
 
+        /// <summary>
+        /// Initializes the spawners.
+        /// </summary>
         public void Initialize()
         {
             _started = true;
         }
 
+        /// <summary>
+        /// Called every frame.
+        /// </summary>
         private void Update()
         {
             if (!_started)
@@ -47,6 +72,10 @@ namespace Space.Client
             }
         }
 
+        /// <summary>
+        /// Called when an entity dies.
+        /// </summary>
+        /// <param name="entity"></param>
         private void Entity_OnDeath(GameEntity entity)
         {
             _watched.Remove(entity);

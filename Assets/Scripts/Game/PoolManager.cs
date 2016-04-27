@@ -3,13 +3,33 @@ using UnityEngine;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Manages pools.
+    /// </summary>
     public class PoolManager : MonoBehaviour
     {
+        /// <summary>
+        /// Pool per game object id.
+        /// </summary>
         private readonly Dictionary<int, ObjectPool<GameObject>> _pools = new Dictionary<int, ObjectPool<GameObject>>();
+
+        /// <summary>
+        /// Pool id per instance.
+        /// </summary>
         private readonly Dictionary<GameObject, int> _poolIds = new Dictionary<GameObject, int>(); 
+
+        /// <summary>
+        /// Transforms for active/inactive.
+        /// </summary>
         private Transform _inactive;
         private Transform _active;
 
+        /// <summary>
+        /// Retrieves a pooled T.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="prefab"></param>
+        /// <returns></returns>
         public T Get<T>(GameObject prefab) where T : class
         {
             var id = prefab.GetInstanceID();
@@ -42,6 +62,11 @@ namespace Space.Client
             return instance.GetComponentInChildren<T>();
         }
 
+        /// <summary>
+        /// Puts a gameObject back in the pool.
+        /// </summary>
+        /// <param name="gameObject"></param>
+        /// <returns></returns>
         public bool Put(GameObject gameObject)
         {
             int id;
@@ -58,6 +83,9 @@ namespace Space.Client
             return true;
         }
 
+        /// <summary>
+        /// Called ASAP.
+        /// </summary>
         private void Awake()
         {
             _inactive = new GameObject("Inactive").transform;

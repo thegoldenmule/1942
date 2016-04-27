@@ -2,8 +2,14 @@
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Main combat state.
+    /// </summary>
     public class CombatState : GameState
     {
+        /// <summary>
+        /// Dependencies.
+        /// </summary>
         [Inject]
         public GameStateController States { get; private set; }
         [Inject]
@@ -13,6 +19,9 @@ namespace Space.Client
         [Inject]
         public SpawnerManager Spawners { get; private set; }
 
+        /// <summary>
+        /// Called when state is exited.
+        /// </summary>
         public override void Enter()
         {
             base.Enter();
@@ -22,6 +31,10 @@ namespace Space.Client
             Spawners.Initialize();
         }
 
+        /// <summary>
+        /// Called every frame.
+        /// </summary>
+        /// <param name="dt"></param>
         public override void DeltaUpdate(float dt)
         {
             base.DeltaUpdate(dt);

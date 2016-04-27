@@ -4,17 +4,35 @@ using Random = UnityEngine.Random;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Spawns an entity.
+    /// </summary>
     public class Spawner : InjectableMonoBehavior
     {
+        /// <summary>
+        /// Dependencies.
+        /// </summary>
         [Inject]
         public EntityFactory Entities { get; private set; }
 
+        /// <summary>
+        /// The entity to spawn.
+        /// </summary>
         public EntityDefinition Entity;
 
+        /// <summary>
+        /// Position variance.
+        /// </summary>
         public Rect Variance = new Rect(0, 0, 0, 0);
 
+        /// <summary>
+        /// Spawns on start.
+        /// </summary>
         public bool SpawnOnStart = false;
 
+        /// <summary>
+        /// Called on start.
+        /// </summary>
         private void Start()
         {
             if (SpawnOnStart)
@@ -23,6 +41,10 @@ namespace Space.Client
             }
         }
 
+        /// <summary>
+        /// Spawns game entities.
+        /// </summary>
+        /// <returns></returns>
         public virtual GameEntity[] Spawn()
         {
             GameEntity instance = null;
@@ -46,6 +68,9 @@ namespace Space.Client
             };
         }
 
+        /// <summary>
+        /// Draws gizmos.
+        /// </summary>
         private void OnDrawGizmos()
         {
             var position = transform.position;

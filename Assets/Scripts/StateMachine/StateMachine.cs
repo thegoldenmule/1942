@@ -1,24 +1,23 @@
 ﻿namespace Space
 {
-    public interface IState
-    {
-        void Enter();
-        void DeltaUpdate(float dt);
-        IAsyncToken<IState> Exit();
-    }
-
-    public interface IStateMachine
-    {
-        IState State { get; set; }
-        void DeltaUpdate(float dt);
-    }
-
+    /// <summary>
+    /// IStateMachine implementation.
+    /// </summary>
     public class StateMachine : IStateMachine
     {
+        /// <summary>
+        /// The current state.
+        /// </summary>
         private IState _state;
         
+        /// <summary>
+        /// Token for state exit.
+        /// </summary>
         private IAsyncToken<IState> _exitStateToken;
 
+        /// <summary>
+        /// Gets/sets the current state.
+        /// </summary>
         public IState State
         {
             get
@@ -64,6 +63,10 @@
             }
         }
 
+        /// <summary>
+        /// Called every frame.
+        /// </summary>
+        /// <param name="dt"></param>
         public void DeltaUpdate(float dt)
         {
             if (null != _state)

@@ -2,8 +2,15 @@
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Utility functions for drawing gizmos.
+    /// </summary>
     public static class GizmosUtil
     {
+        /// <summary>
+        /// Draws bounds.
+        /// </summary>
+        /// <param name="bounds"></param>
         public static void DrawBounds(Bounds bounds)
         {
             var min = bounds.min;

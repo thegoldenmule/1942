@@ -3,8 +3,14 @@ using UnityEngine;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Bindings for client.
+    /// </summary>
     public class ClientModule : NinjectModule
     {
+        /// <summary>
+        /// Loads bindings.
+        /// </summary>
         public override void Load()
         {
             Bind<GameStateController>().ToProvider(new HierarchyResolver<GameStateController>(Tags.Controllers)).InSingletonScope();
