@@ -1,7 +1,12 @@
-﻿namespace Space.Client
+﻿using Ninject;
+
+namespace Space.Client
 {
     public class GameState : InjectableMonoBehavior, IState
     {
+        [Inject]
+        public GameStateController States { get; private set; }
+
         public GameState Next;
         public GameState Failure;
 

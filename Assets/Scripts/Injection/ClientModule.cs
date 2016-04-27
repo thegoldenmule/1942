@@ -12,6 +12,7 @@ namespace Space.Client
             Bind<PoolManager>().ToProvider(new HierarchyResolver<PoolManager>(Tags.Controllers)).InSingletonScope();
             Bind<CameraController>().ToProvider(new HierarchyResolver<CameraController>(Tags.MainCamera)).InSingletonScope();
             Bind<MapController>().ToProvider(new HierarchyResolver<MapController>(Tags.Controllers)).InSingletonScope();
+            Bind<SpawnerManager>().ToProvider(new HierarchyResolver<SpawnerManager>(Tags.Spawners)).InSingletonScope();
             Bind<Camera>().ToConstant(Camera.main).InSingletonScope();
             Bind<ProjectileManager>().To<ProjectileManager>().InSingletonScope();
 

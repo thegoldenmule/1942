@@ -8,5 +8,6 @@
         public const string MainCamera = "MainCamera";
         public const string Controllers = "Controllers";
         public const string Player = "Player";
+        public const string Spawners = "Spawners";
     }
 }

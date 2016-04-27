@@ -1,6 +1,5 @@
 ﻿using Ninject;
 using Space.Client;
-using UnityEngine;
 
 namespace Space
 {
@@ -41,7 +40,7 @@ namespace Space
         public void Start()
         {
             _states = _kernel.Get<GameStateController>();
-            _states.State = _states.Combat;
+            _states.State = _states.Splash;
         }
 
         /// <summary>
