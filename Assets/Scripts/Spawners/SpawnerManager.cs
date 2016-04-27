@@ -3,7 +3,7 @@ using Ninject;
 
 namespace Space.Client
 {
-    public class WaveSpawner : InjectableMonoBehavior
+    public class SpawnerManager : InjectableMonoBehavior
     {
         [Inject]
         public GameStateController States { get; private set; }
