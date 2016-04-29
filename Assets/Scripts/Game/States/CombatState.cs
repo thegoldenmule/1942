@@ -1,4 +1,6 @@
-﻿using Ninject;
+﻿using System;
+using System.Linq;
+using Ninject;
 
 namespace Space.Client
 {
@@ -66,6 +68,18 @@ namespace Space.Client
             Entities.OnAdded -= Entities_OnAdded;
             Entities.OnRemoved -= Entities_OnRemoved;
 
+            var entities = Entities.Entities.ToArray();
+            foreach (var entity in entities)
+            {
+                entity.Uninitialize();
+            }
+
+            var projectiles = Projectiles.All.ToArray();
+            foreach (var projectile in projectiles)
+            {
+                projectile.Uninitialize();
+            }
+
             return base.Exit();
         }
 
@@ -75,7 +89,7 @@ namespace Space.Client
         /// <param name="gameEntity"></param>
         private void Entities_OnRemoved(GameEntity gameEntity)
         {
-            gameEntity.OnDeath -= Entity_OnDeath;
+            gameEntity.OnDeath -= EnemyEntity_OnDeath;
         }
 
         /// <summary>
@@ -84,14 +98,30 @@ namespace Space.Client
         /// <param name="gameEntity"></param>
         private void Entities_OnAdded(GameEntity gameEntity)
         {
-            gameEntity.OnDeath += Entity_OnDeath;
+            if (gameEntity == Entities.Player)
+            {
+                gameEntity.OnDeath += Player_OnDeath;
+            }
+            else
+            {
+                gameEntity.OnDeath += EnemyEntity_OnDeath;
+            }
+        }
+
+        /// <summary>
+        /// Called when player dies.
+        /// </summary>
+        /// <param name="gameEntity"></param>
+        private void Player_OnDeath(GameEntity gameEntity)
+        {
+            States.State = States.GameOver;
         }
 
         /// <summary>
         /// Called when an entity dies.
         /// </summary>
         /// <param name="gameEntity"></param>
-        private void Entity_OnDeath(GameEntity gameEntity)
+        private void EnemyEntity_OnDeath(GameEntity gameEntity)
         {
             _score += gameEntity.Definition.Score;
 

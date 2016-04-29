@@ -7,6 +7,8 @@ namespace Space.Client
     {
         [Inject]
         public EntityManager Entities { get; private set; }
+        [Inject]
+        public PoolManager Pools { get; private set; }
 
         public float Speed;
 
@@ -28,6 +30,11 @@ namespace Space.Client
 
             transform.position = _start;
             transform.forward = _direction;
+        }
+
+        public void Uninitialize()
+        {
+            Pools.Put(gameObject);
         }
 
         public bool DeltaUpdate(float dt)

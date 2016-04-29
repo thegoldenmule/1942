@@ -40,6 +40,15 @@ namespace Space.Client
         public void Initialize()
         {
             _started = true;
+            _index = 0;
+        }
+
+        /// <summary>
+        /// Uninitializes the spawners.
+        /// </summary>
+        public void Uninitialize()
+        {
+            _started = false;
         }
 
         /// <summary>

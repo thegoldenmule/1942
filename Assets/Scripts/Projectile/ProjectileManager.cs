@@ -19,6 +19,17 @@ namespace Space.Client
         private readonly PoolManager _pools;
 
         /// <summary>
+        /// Retrieves all projectiles.
+        /// </summary>
+        public List<Projectile> All
+        {
+            get
+            {
+                return _projectiles;
+            }
+        } 
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="pools"></param>
@@ -62,7 +73,7 @@ namespace Space.Client
                 var projectile = _projectiles[i];
                 if (!projectile.DeltaUpdate(dt))
                 {
-                    _pools.Put(projectile.gameObject);
+                    projectile.Uninitialize();
 
                     _projectiles.RemoveAt(i);
                 }

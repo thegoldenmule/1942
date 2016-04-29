@@ -10,6 +10,7 @@
         /// </summary>
         public CombatState Combat;
         public EndGameState End;
+        public GameOverState GameOver;
         public SplashState Splash;
         
         /// <summary>

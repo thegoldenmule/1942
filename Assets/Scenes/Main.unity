@@ -1720,10 +1720,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - {fileID: 702445696}
-  - {fileID: 1769587867}
-  - {fileID: 179780793}
-  - {fileID: 1022031962}
-  - {fileID: 1007079301}
 --- !u!1 &1937254833
 GameObject:
   m_ObjectHideFlags: 0

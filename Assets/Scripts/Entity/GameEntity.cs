@@ -62,9 +62,23 @@ namespace Space.Client
                 Weapons.Initialize(this);
             }
 
-            Stats.Stat(StatType.Health).OnUpdated += Stat_OnHealthUpdated;
+            if (null != Stats)
+            {
+                Stats.Stat(StatType.Health).OnUpdated += Stat_OnHealthUpdated;
+            }
         }
 
+        /// <summary>
+        /// Called to unitialize the entity.
+        /// </summary>
+        public virtual void Uninitialize()
+        {
+            Pools.Put(gameObject);
+        }
+
+        /// <summary>
+        /// Called when created.
+        /// </summary>
         protected override void Awake()
         {
             base.Awake();
@@ -72,16 +86,25 @@ namespace Space.Client
             _transform = transform;
         }
 
+        /// <summary>
+        /// Called when enabled.
+        /// </summary>
         protected virtual void OnEnable()
         {
             Entities.Add(this);
         }
 
+        /// <summary>
+        /// Called when disabled.
+        /// </summary>
         protected virtual void OnDisable()
         {
             Entities.Remove(this);
         }
 
+        /// <summary>
+        /// Called every frame.
+        /// </summary>
         protected virtual void Update()
         {
             var dt = Time.deltaTime;
@@ -90,6 +113,9 @@ namespace Space.Client
             Agent.DeltaUpdate(dt);
         }
 
+        /// <summary>
+        /// Called when entity should die.
+        /// </summary>
         protected virtual void Die()
         {
             if (null != OnDeath)
@@ -97,9 +123,15 @@ namespace Space.Client
                 OnDeath(this);
             }
 
-            Pools.Put(gameObject);
+            Uninitialize();
         }
 
+        /// <summary>
+        /// Called when health stat is updated.
+        /// </summary>
+        /// <param name="stat"></param>
+        /// <param name="oldValue"></param>
+        /// <param name="newValue"></param>
         private void Stat_OnHealthUpdated(Stat stat, float oldValue, float newValue)
         {
             if (newValue <= 0f)
@@ -108,6 +140,9 @@ namespace Space.Client
             }
         }
 
+        /// <summary>
+        /// Draws gizmos for help debugging.
+        /// </summary>
         private void OnDrawGizmos()
         {
             if (null == Definition)
