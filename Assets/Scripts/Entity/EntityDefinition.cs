@@ -8,6 +8,8 @@ namespace Space.Client
         public Bounds Bounds;
         public GameEntity Prefab;
 
+        public int Score;
+
         public AIControllerDefinition AI;
         public StatControllerDefinition Stats;
         public PhysicsControllerDefinition Physics;

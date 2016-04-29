@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Space.Client
@@ -9,6 +10,9 @@ namespace Space.Client
         private readonly List<GameEntity> _enemies = new List<GameEntity>();
 
         public PlayerGameEntity Player { get; private set; }
+
+        public event Action<GameEntity> OnAdded;
+        public event Action<GameEntity> OnRemoved;
 
         public IList<GameEntity> Entities
         {
@@ -46,6 +50,11 @@ namespace Space.Client
             {
                 _enemies.Add(entity);
             }
+
+            if (null != OnAdded)
+            {
+                OnAdded(entity);
+            }
         }
 
         public void Remove(GameEntity entity)
@@ -59,6 +68,11 @@ namespace Space.Client
             else
             {
                 _enemies.Remove(entity);
+            }
+
+            if (null != OnRemoved)
+            {
+                OnRemoved(entity);
             }
         }
     }

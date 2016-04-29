@@ -92,12 +92,12 @@ namespace Space.Client
 
         protected virtual void Die()
         {
-            Pools.Put(gameObject);
-
             if (null != OnDeath)
             {
                 OnDeath(this);
             }
+
+            Pools.Put(gameObject);
         }
 
         private void Stat_OnHealthUpdated(Stat stat, float oldValue, float newValue)

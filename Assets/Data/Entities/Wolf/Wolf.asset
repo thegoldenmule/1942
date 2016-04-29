@@ -15,6 +15,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 3, y: 2, z: 2}
   Prefab: {fileID: 11489672, guid: ea0adcd93669a124a8d75a707423601b, type: 2}
+  Score: 10
   AI: {fileID: 11400000, guid: e478e937017dbf544b5a58221fe26f3c, type: 2}
   Stats: {fileID: 11400000, guid: e20b8edad3eb29444b57294aee83fc55, type: 2}
   Physics: {fileID: 0}
