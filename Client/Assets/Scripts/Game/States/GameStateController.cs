@@ -12,6 +12,7 @@
         public EndGameState End;
         public GameOverState GameOver;
         public SplashState Splash;
+        public HighScoresState HighScores;
         
         /// <summary>
         /// State machine.

@@ -20,6 +20,7 @@ namespace Space.Client
             Bind<MapController>().ToProvider(new HierarchyResolver<MapController>(Tags.Controllers)).InSingletonScope();
             Bind<SpawnerManager>().ToProvider(new HierarchyResolver<SpawnerManager>(Tags.Spawners)).InSingletonScope();
             Bind<UIController>().ToProvider(new HierarchyResolver<UIController>(Tags.Controllers)).InSingletonScope();
+            Bind<HighScoreService>().ToProvider(new HierarchyResolver<HighScoreService>(Tags.Controllers)).InSingletonScope();
             Bind<Camera>().ToConstant(Camera.main).InSingletonScope();
             Bind<ProjectileManager>().To<ProjectileManager>().InSingletonScope();
 

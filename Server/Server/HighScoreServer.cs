@@ -1,22 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using Nancy;
 using Nancy.Hosting.Self;
 using Newtonsoft.Json;
 
-namespace Server
+namespace Space.Server
 {
-    public class Response
-    {
-        public bool Success;
-    }
-
-    public class HighScores
-    {
-        public List<int> Scores;
-    }
-
     public class HighScoreService : NancyModule
     {
         private const string PATH = "HighScores.json";
@@ -54,10 +43,7 @@ namespace Server
 
                 Write(Scores);
 
-                return JsonConvert.SerializeObject(new Response
-                {
-                    Success = true
-                });
+                return "Ok.";
             };
         }
 
