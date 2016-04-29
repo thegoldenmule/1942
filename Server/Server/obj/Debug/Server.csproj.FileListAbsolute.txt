@@ -1,0 +1,12 @@
+C:\Projects\1942\Server\Server\bin\Debug\Server.exe.config
+C:\Projects\1942\Server\Server\bin\Debug\Server.exe
+C:\Projects\1942\Server\Server\bin\Debug\Server.pdb
+C:\Projects\1942\Server\Server\bin\Debug\Nancy.dll
+C:\Projects\1942\Server\Server\bin\Debug\Nancy.Hosting.Self.dll
+C:\Projects\1942\Server\Server\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\1942\Server\Server\bin\Debug\Nancy.xml
+C:\Projects\1942\Server\Server\bin\Debug\Nancy.Hosting.Self.xml
+C:\Projects\1942\Server\Server\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\1942\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Projects\1942\Server\Server\obj\Debug\Server.exe
+C:\Projects\1942\Server\Server\obj\Debug\Server.pdb
