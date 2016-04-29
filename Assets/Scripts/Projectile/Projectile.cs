@@ -10,8 +10,6 @@ namespace Space.Client
         [Inject]
         public PoolManager Pools { get; private set; }
 
-        public float Speed;
-
         private GameEntity _source;
         private WeaponDefinition _weapon;
         private Vector3 _start;
@@ -40,7 +38,7 @@ namespace Space.Client
         public bool DeltaUpdate(float dt)
         {
             var currentPosition = transform.position;
-            var nextPosition = currentPosition + _direction * Speed * dt;
+            var nextPosition = currentPosition + _direction * _weapon.Speed * dt;
             var distance = (nextPosition - currentPosition).magnitude;
 
             transform.position = nextPosition;
@@ -66,7 +64,12 @@ namespace Space.Client
                     && intersectionDistance < distance)
                 {
                     // collision
-                    entity.Stats.Stat(StatType.Health).Value -= _source.Stats.Stat(StatType.DamageModifier).Value * _weapon.Damage;
+                    var health = entity.Stats.Stat(StatType.Health);
+                    var damageMod = _source.Stats.Stat(StatType.DamageModifier);
+                    if (null != health && null != damageMod)
+                    {
+                        health.Value -= damageMod.Value * _weapon.Damage;
+                    }
 
                     return false;
                 }

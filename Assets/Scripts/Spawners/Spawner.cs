@@ -26,22 +26,6 @@ namespace Space.Client
         public Rect Variance = new Rect(0, 0, 0, 0);
 
         /// <summary>
-        /// Spawns on start.
-        /// </summary>
-        public bool SpawnOnStart = false;
-
-        /// <summary>
-        /// Called on start.
-        /// </summary>
-        private void Start()
-        {
-            if (SpawnOnStart)
-            {
-                Spawn();
-            }
-        }
-
-        /// <summary>
         /// Spawns game entities.
         /// </summary>
         /// <returns></returns>

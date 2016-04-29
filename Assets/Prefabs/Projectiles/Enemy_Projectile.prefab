@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349fc34ac1ca11a4bb9a280dea8aa211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 20
 --- !u!135 &13518888
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -97,7 +97,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: Speed
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

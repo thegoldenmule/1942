@@ -7,5 +7,6 @@ namespace Space.Client
     {
         public Projectile Prefab;
         public float Damage;
+        public float Speed;
     }
 }

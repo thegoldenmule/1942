@@ -27,6 +27,11 @@ namespace Space.Client
             }
         }
 
+        public void Uninitialize()
+        {
+            _stats.Clear();
+        }
+
         public void DeltaUpdate(float dt)
         {
             //

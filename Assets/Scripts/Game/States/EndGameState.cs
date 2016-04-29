@@ -1,4 +1,5 @@
-﻿using UnityEngine.UI;
+﻿using Ninject;
+using UnityEngine.UI;
 
 namespace Space.Client
 {
@@ -8,9 +9,20 @@ namespace Space.Client
     public class EndGameState : GameState
     {
         /// <summary>
+        /// Dependencies.
+        /// </summary>
+        [Inject]
+        public GameStateController States { get; private set; }
+
+        /// <summary>
         /// Text gameobject.
         /// </summary>
         public Text Text;
+
+        /// <summary>
+        /// Restarts button.
+        /// </summary>
+        public Button Restart;
 
         /// <summary>
         /// Called when state is entered.
@@ -19,7 +31,7 @@ namespace Space.Client
         {
             base.Enter();
 
-            Text.enabled = true;
+            gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -28,9 +40,17 @@ namespace Space.Client
         /// <returns></returns>
         public override IAsyncToken<IState> Exit()
         {
-            Text.enabled = false;
+            gameObject.SetActive(false);
 
             return base.Exit();
+        }
+
+        /// <summary>
+        /// Restarts end game state.
+        /// </summary>
+        public void OnRestart()
+        {
+            States.State = States.Combat;
         }
     }
 }

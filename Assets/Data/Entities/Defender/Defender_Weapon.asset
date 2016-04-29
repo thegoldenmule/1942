@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 11476374, guid: a00dcb0ae4fb59a46af5ed5c278d3f2d, type: 2}
   Damage: 10
+  Speed: 20

@@ -183,7 +183,6 @@ MonoBehaviour:
     y: -1
     width: 2
     height: 2
-  SpawnOnStart: 0
 --- !u!1001 &235631656
 Prefab:
   m_ObjectHideFlags: 0
@@ -276,7 +275,6 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0
 --- !u!1 &373107687
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +321,6 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0
 --- !u!1 &406859423
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +367,6 @@ MonoBehaviour:
     y: -1
     width: 2
     height: 2
-  SpawnOnStart: 0
 --- !u!1 &550138186
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +413,6 @@ MonoBehaviour:
     y: -1
     width: 2
     height: 2
-  SpawnOnStart: 0
 --- !u!1001 &563117151
 Prefab:
   m_ObjectHideFlags: 0
@@ -900,7 +895,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 0
 --- !u!1 &1031408450
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +941,6 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0
 --- !u!1 &1251462525
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +987,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 0
 --- !u!1 &1263489287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1108,6 @@ MonoBehaviour:
     y: -1
     width: 2
     height: 2
-  SpawnOnStart: 0
 --- !u!1 &1337309544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1154,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 0
 --- !u!1 &1363930867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1200,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 0
 --- !u!1 &1506325684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,7 +1246,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 1
 --- !u!1 &1532994785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1292,6 @@ MonoBehaviour:
     y: -1
     width: 2
     height: 2
-  SpawnOnStart: 0
 --- !u!1 &1535003622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1338,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 0
 --- !u!1001 &1535808252
 Prefab:
   m_ObjectHideFlags: 0
@@ -1490,7 +1476,6 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0
 --- !u!1 &1769587865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,7 +1611,6 @@ MonoBehaviour:
     y: -1
     width: 2
     height: 2
-  SpawnOnStart: 0
 --- !u!1001 &1898871678
 Prefab:
   m_ObjectHideFlags: 0
@@ -1665,6 +1649,10 @@ Prefab:
     - target: {fileID: 440176, guid: 32a1a01e5f613d341985436a4e39087a, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423452, guid: 32a1a01e5f613d341985436a4e39087a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32a1a01e5f613d341985436a4e39087a, type: 2}
@@ -1718,6 +1706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c90e3b8c590d443bb61c282994fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSpawner: {fileID: 1506325686}
   Waves:
   - {fileID: 702445696}
 --- !u!1 &1937254833
@@ -1766,7 +1755,6 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0
 --- !u!1 &1937767785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,7 +1801,6 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0
 --- !u!1 &1956750050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1847,6 @@ MonoBehaviour:
     y: -1
     width: 2
     height: 2
-  SpawnOnStart: 0
 --- !u!1 &1972870051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,7 +1893,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 0
 --- !u!1 &2081620409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1939,6 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  SpawnOnStart: 0
 --- !u!1 &2086109424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +1985,6 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0
 --- !u!1 &2119241852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,4 +2031,3 @@ MonoBehaviour:
     y: -3
     width: 6
     height: 6
-  SpawnOnStart: 0

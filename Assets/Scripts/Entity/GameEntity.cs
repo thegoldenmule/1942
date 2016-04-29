@@ -73,6 +73,11 @@ namespace Space.Client
         /// </summary>
         public virtual void Uninitialize()
         {
+            if (null != Stats)
+            {
+                Stats.Uninitialize();
+            }
+
             Pools.Put(gameObject);
         }
 

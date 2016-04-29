@@ -79,6 +79,7 @@ namespace Space.Client
             {
                 projectile.Uninitialize();
             }
+            Projectiles.All.Clear();
 
             return base.Exit();
         }

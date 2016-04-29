@@ -15,6 +15,11 @@ namespace Space.Client
         public GameStateController States { get; private set; }
 
         /// <summary>
+        /// Spawns the player.
+        /// </summary>
+        public Spawner PlayerSpawner;
+
+        /// <summary>
         /// Waves.
         /// </summary>
         public SpawnerGroup[] Waves;
@@ -41,6 +46,8 @@ namespace Space.Client
         {
             _started = true;
             _index = 0;
+
+            PlayerSpawner.Spawn();
         }
 
         /// <summary>
