@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Text;
 using Newtonsoft.Json;
-using Space.Server;
+using Space.Common;
 using UnityEngine;
 
 namespace Space.Client

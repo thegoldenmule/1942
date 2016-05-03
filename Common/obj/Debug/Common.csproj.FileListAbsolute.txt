@@ -1,0 +1,4 @@
+C:\Projects\1942\Client\Assets\Plugins\Common.dll
+C:\Projects\1942\Client\Assets\Plugins\Common.pdb
+C:\Projects\1942\Common\obj\Debug\Common.dll
+C:\Projects\1942\Common\obj\Debug\Common.pdb

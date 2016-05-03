@@ -1,5 +1,5 @@
 ﻿using Ninject;
-using Space.Server;
+using Space.Common;
 using UnityEngine;
 
 namespace Space.Client
