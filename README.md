@@ -1,7 +1,7 @@
 Instructions
 ------
-* Start high score server: **Server\Server\bin\Debug\Server.exe.**
-* Start client in Unity.
+* Start high score server: **Server/Server/bin/Debug/Server.exe.**
+* Start **Client/Assets/Scenes/Main** in Unity.
 
 Design
 ------
