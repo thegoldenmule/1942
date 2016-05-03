@@ -51,11 +51,13 @@ namespace Space.Client
         /// <param name="score"></param>
         public void PostHighScore(int score)
         {
-            var url = _baseUrl + "/sethighscore?Score=" + score;
+            var url = _baseUrl + "/highscore";
 
-            Debug.Log("GET " + url);
+            Debug.Log("POST " + url);
 
-            var request = new WWW(url);
+            var request = new WWW(
+                url,
+                Encoding.UTF8.GetBytes("score=" + score));
             
             StartCoroutine(Load(request, () =>
             {

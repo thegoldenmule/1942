@@ -1,5 +1,7 @@
 using System.IO;
+using System.Linq;
 using Nancy;
+using Nancy.Extensions;
 using Newtonsoft.Json;
 using Space.Common;
 
@@ -38,10 +40,10 @@ namespace Space.Server
                 return JsonConvert.SerializeObject(Scores);
             };
 
-            // TODO: This should be POST.
-            Get["/sethighscore"] = parameters =>
+            Post["/highscore"] = parameters =>
             {
-                var score = int.Parse(Request.Query["Score"]);
+                var body = Request.Body.AsString();
+                var score = int.Parse(body.Split('=').Last());
 
                 if (null == Scores)
                 {
