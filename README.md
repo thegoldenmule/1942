@@ -1,10 +1,11 @@
 Instructions
 ------
-* Start high score server: **Server/Server/bin/Debug/Server.exe.**
-* Start **Client/Assets/Scenes/Main** in Unity.
+* Start server: **Server.exe.**
+* Start client: **Client.exe.**
 
 Design
 ------
+* Projects - Server, Common, and Client projects make it easy to share code between client and server.
 
 * Ninject - I recommend using a dependency injection of some sort in a game of any non-trivial size. This removes the need for programming singletons, global event dispatchers can shrink in size (or be removed entirely), and circular dependencies can be caught programmatically. This also allows for unit testing and for easily using using systems at runtime and in editor tools.
 

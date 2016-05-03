@@ -1,0 +1,145 @@
+Initialize engine version: 5.3.2f1 (e87ab445ead0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Vendor:   Intel
+    VRAM:     2111 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Projects\1942\Build\Client_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Projects\1942\Build\Client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Projects\1942\Build\Client_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Projects\1942\Build\Client_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\Common.dll (this message is harmless)
+Loading C:\Projects\1942\Build\Client_Data\Managed\Common.dll into Unity Child Domain
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\Newtonsoft.Json.dll (this message is harmless)
+Loading C:\Projects\1942\Build\Client_Data\Managed\Newtonsoft.Json.dll into Unity Child Domain
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\Ninject.dll (this message is harmless)
+Loading C:\Projects\1942\Build\Client_Data\Managed\Ninject.dll into Unity Child Domain
+- Completed reload, in  0.055 seconds
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\System.dll (this message is harmless)
+desktop: 3200x1800 60Hz; virtual: 3200x1800 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'Environment') is missing!
+ 
+(Filename:  Line: 1655)
+
+UnloadTime: 0.605628 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 34d8 -> priority: 1 
+GET http://localhost/highscore
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object '<null>') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small (1)') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'EngineHeat_small') is missing!
+ 
+(Filename:  Line: 1655)
+
