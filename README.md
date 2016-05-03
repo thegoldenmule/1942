@@ -1,7 +1,12 @@
+Instructions
+------
+* Start high score server: **Server\Server\bin\Debug\Server.exe.**
+* Start client in Unity.
+
 Design
 ------
 
-* Ninject - I recommend using a dependency injection of some sort in a game of any non-trivial size. This removes the need for programming singletons, global event dispatchers can shrink in size (or be removed entirely), and circular dependencies can be caught programmatically.
+* Ninject - I recommend using a dependency injection of some sort in a game of any non-trivial size. This removes the need for programming singletons, global event dispatchers can shrink in size (or be removed entirely), and circular dependencies can be caught programmatically. This also allows for unit testing and for easily using using systems at runtime and in editor tools.
 
 * Bootstrap + Director - The Bootstrap script exists to pull the Director away from the Unity API. The Director can be used on client + servers.
 
@@ -12,3 +17,5 @@ Design
 * FSMs - A root level FSM (GameStateController) controls which major piece of the game we are in. An FSM also controls how we respond to input (InputController).
 
 * Pooling - Programming against a pooling interface is also a great idea to get in early. In demanding games, pooling is an absolute must.
+
+* High Score Server - A very simple REST service for high scores.
