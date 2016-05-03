@@ -1,0 +1,4 @@
+C:\Projects\1942\Build\Server.exe
+C:\Projects\1942\Build\Server.pdb
+C:\Projects\1942\Server\Server\obj\Release\Server.exe
+C:\Projects\1942\Server\Server\obj\Release\Server.pdb

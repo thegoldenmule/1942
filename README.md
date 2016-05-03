@@ -1,7 +1,8 @@
 Instructions
 ------
-* Start server: **Server.exe.**
-* Start client: **Client.exe.**
+* Open **Master.sln** and hit Play to run the server.
+* Open **Client.exe.**
+* Spacebar shoots, arrows move.
 
 Design
 ------

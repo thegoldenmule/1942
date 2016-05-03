@@ -20,7 +20,7 @@ Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\Newtonsoft.Json.dl
 Loading C:\Projects\1942\Build\Client_Data\Managed\Newtonsoft.Json.dll into Unity Child Domain
 Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\Ninject.dll (this message is harmless)
 Loading C:\Projects\1942\Build\Client_Data\Managed\Ninject.dll into Unity Child Domain
-- Completed reload, in  0.055 seconds
+- Completed reload, in  0.072 seconds
 Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\System.dll (this message is harmless)
 desktop: 3200x1800 60Hz; virtual: 3200x1800 at 0,0
@@ -40,13 +40,15 @@ The referenced script on this Behaviour (Game Object 'Environment') is missing!
  
 (Filename:  Line: 1655)
 
-UnloadTime: 0.605628 ms
+UnloadTime: 0.720197 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 34d8 -> priority: 1 
+  Thread -> id: 1ee4 -> priority: 1 
 GET http://localhost/highscore
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\System.Xml.dll (this message is harmless)
+Platform assembly: C:\Projects\1942\Build\Client_Data\Managed\System.Data.dll (this message is harmless)
 The referenced script on this Behaviour (Game Object '<null>') is missing!
  
 (Filename:  Line: 1655)
