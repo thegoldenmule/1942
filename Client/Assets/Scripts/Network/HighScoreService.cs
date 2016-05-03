@@ -7,13 +7,23 @@ using UnityEngine;
 
 namespace Space.Client
 {
+    /// <summary>
+    /// Service that retrieves high scores.
+    /// </summary>
     public class HighScoreService : MonoBehaviour
     {
+        /// <summary>
+        /// Base URL for high score API.
+        /// </summary>
         private readonly string _baseUrl = "http://localhost";
 
+        /// <summary>
+        /// Retrieves high scores.
+        /// </summary>
+        /// <returns></returns>
         public IAsyncToken<HighScores> GetHighScores()
         {
-            var url = _baseUrl + "/highscores";
+            var url = _baseUrl + "/highscore";
             
             Debug.Log("GET " + url);
 
@@ -35,21 +45,23 @@ namespace Space.Client
             return token;
         }
 
+        /// <summary>
+        /// Posts a new high score.
+        /// </summary>
+        /// <param name="score"></param>
         public void PostHighScore(int score)
         {
-            var url = _baseUrl + "/highscores";
+            var url = _baseUrl + "/sethighscore?Score=" + score;
 
-            Debug.Log("POST " + url);
+            Debug.Log("GET " + url);
 
-            var request = new WWW(
-                url,
-                Encoding.UTF8.GetBytes(string.Format("score={0}", score)));
+            var request = new WWW(url);
             
             StartCoroutine(Load(request, () =>
             {
                 if (!string.IsNullOrEmpty(request.error))
                 {
-                    Debug.LogError("Could not post : " + request.error);
+                    Debug.LogError("Could not set : " + request.error);
                 }
                 else
                 {
@@ -58,6 +70,12 @@ namespace Space.Client
             }));
         }
 
+        /// <summary>
+        /// Waits on a WWW request.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="callback"></param>
+        /// <returns></returns>
         private IEnumerator Load(WWW request, Action callback)
         {
             yield return request;

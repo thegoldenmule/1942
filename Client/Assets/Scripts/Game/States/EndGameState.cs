@@ -1,5 +1,5 @@
-﻿using Ninject;
-using UnityEngine.UI;
+﻿using System;
+using UnityEngine;
 
 namespace Space.Client
 {
@@ -9,29 +9,13 @@ namespace Space.Client
     public class EndGameState : GameState
     {
         /// <summary>
-        /// Dependencies.
-        /// </summary>
-        [Inject]
-        public GameStateController States { get; private set; }
-
-        /// <summary>
-        /// Text gameobject.
-        /// </summary>
-        public Text Text;
-
-        /// <summary>
-        /// Restarts button.
-        /// </summary>
-        public Button Restart;
-
-        /// <summary>
         /// Called when state is entered.
         /// </summary>
         public override void Enter()
         {
-            base.Enter();
+            enabled = true;
 
-            gameObject.SetActive(true);
+            base.Enter();
         }
 
         /// <summary>
@@ -40,17 +24,34 @@ namespace Space.Client
         /// <returns></returns>
         public override IAsyncToken<IState> Exit()
         {
-            gameObject.SetActive(false);
+            enabled = false;
 
             return base.Exit();
         }
 
         /// <summary>
-        /// Restarts end game state.
+        /// Draws controls.
         /// </summary>
-        public void OnRestart()
+        private void OnGUI()
         {
-            States.State = States.Combat;
+            GUILayout.BeginHorizontal(GUILayout.Width(Screen.width));
+            GUILayout.FlexibleSpace();
+            GUILayout.BeginVertical(GUILayout.Width(200));
+
+            GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true));
+            GUILayout.FlexibleSpace();
+
+            if (GUILayout.Button("Restart", GUILayout.Width(100), GUILayout.Height(40)))
+            {
+                States.State = Next;
+            }
+
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+
+            GUILayout.EndVertical();
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
         }
     }
 }

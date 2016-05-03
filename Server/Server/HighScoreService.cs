@@ -38,21 +38,30 @@ namespace Space.Server
                 return JsonConvert.SerializeObject(Scores);
             };
 
-            Post["/highscore"] = parameters =>
+            // TODO: This should be POST.
+            Get["/sethighscore"] = parameters =>
             {
-                var score = parameters.Score;
+                var score = int.Parse(Request.Query["Score"]);
 
                 if (null == Scores)
                 {
                     Scores = Read();
                 }
 
+                var inserted = false;
                 for (int i = 0, len = Scores.Scores.Count; i < len; i++)
                 {
-                    if (Scores.Scores[i] > score)
+                    if (score > Scores.Scores[i])
                     {
                         Scores.Scores.Insert(i, score);
+                        inserted = true;
+                        break;
                     }
+                }
+
+                if (!inserted)
+                {
+                    Scores.Scores.Add(score);
                 }
 
                 Write(Scores);

@@ -24,6 +24,8 @@ namespace Space.Client
         public EntityManager Entities { get; private set; }
         [Inject]
         public UIController UI { get; private set; }
+        [Inject]
+        public HighScoreService HighScores { get; private set; }
 
         /// <summary>
         /// The score of the game.
@@ -65,6 +67,8 @@ namespace Space.Client
         /// <returns></returns>
         public override IAsyncToken<IState> Exit()
         {
+            HighScores.PostHighScore(_score);
+
             Entities.OnAdded -= Entities_OnAdded;
             Entities.OnRemoved -= Entities_OnRemoved;
 
@@ -80,6 +84,8 @@ namespace Space.Client
                 projectile.Uninitialize();
             }
             Projectiles.All.Clear();
+
+            Spawners.Uninitialize();
 
             return base.Exit();
         }
